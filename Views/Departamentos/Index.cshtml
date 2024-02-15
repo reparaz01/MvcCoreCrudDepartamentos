@@ -1,0 +1,42 @@
+﻿@model List<Departamento>
+
+<h1> CRUD Departamentos</h1>
+
+
+<p>
+    <a asp-controller="Departamentos"
+       asp-action="Create"> Crear Departamento </a>
+</p>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th> Nombre </th>
+            <th> Localidad </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (Departamento dept in Model)
+        {
+            <tr>
+                <td> @dept.Nombre</td>
+                <td> @dept.Localidad</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "Departamentos", new { id = dept.IdDepartamento})
+                </td>
+
+                <td>
+                    @Html.ActionLink("Update", "Edit", "Departamentos", new { id = dept.IdDepartamento})
+                </td>
+
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Departamentos", new { id = dept.IdDepartamento})
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

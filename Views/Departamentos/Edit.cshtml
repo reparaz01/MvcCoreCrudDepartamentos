@@ -1,0 +1,16 @@
+﻿@model Departamento
+
+<h1> EDITAR</h1>
+
+
+<form method="post">
+
+    <input type="hidden" name="iddepartamento" value="@Model.IdDepartamento" />
+    <label> Nombre: </label>
+    <input type="text" name="nombre" class="form-control" value="@Model.Nombre" />
+
+    <label> Localidad: </label>
+    <input type="text" name="localidad" class="form-control" value="@Model.Localidad" />
+    <br />
+    <button class="btn btn-dark"> Modificar Departamento </button>
+</form>
